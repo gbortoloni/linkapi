@@ -1,8 +1,13 @@
+import Oportunidades from '../jobs/Oportunidades';
+import Queue from '../../lib/Queue';
+
 class OportunidadeController {
     async store(req, res) {
-        console.log(req.body);
+        const oportunidade = req.body;
 
-        return res.json();
+        await Queue.add(Oportunidades.key, { oportunidade });
+
+        return res.json(oportunidade);
     }
 }
 
