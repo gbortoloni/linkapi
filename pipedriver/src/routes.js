@@ -1,10 +1,9 @@
 import { Router } from 'express';
 
-import PipedriveController from './app/controllers/PipedriveController';
+import OportunidadeController from './app/controllers/OportunidadeController';
 
 const routes = new Router();
 
-routes.get('/webhook/pipedrive', PipedriveController.index);
-routes.post('/webhook/pipedrive', PipedriveController.store);
+routes.post('/webhook/oportunidades', OportunidadeController.store);
 
 export default routes;
